@@ -1,5 +1,6 @@
  > This document is for clean code in Python
- >  > referenced in https://doorbw.tistory.com/231
+ >  > referenced in https://doorbw.tistory.com/231   
+ >  > referenced in https://www.python.org/dev/peps/pep-0257/
 
  # *Docstring*
 ## *Docstring*은 코드에 포함된 문서
@@ -82,7 +83,48 @@ if __name__ == '__main__':
 ```
 위와 같이 간단한 클래스 하나와 함수 하나를 만들어 *Docstring*을 기입하였다.
 
-***Docstring*은 코드와 같이 클래스, 함수 선언 바로 아래에 따옴표 3개를 사용한 str으로 정의할 수 있다.**
+***Docstring*은 코드와 같이 클래스, 함수 선언 후 첫 번째로 사용되는 string literal이다.**
+
+추가적으로 PEP257에선 좋은 docstring 작성 규칙에 대해 기술되어 있다.
+'''이 끝나는 부분에서는 한줄 전체에 '''를 넣고, 바로 위의 한줄을 빈 줄로 두어야 한다고 한다.
+> https://www.python.org/dev/peps/pep-0257/
+
+따라서 해당 규칙을 적용하여 docstring을 수정한다.
+
+이 외에도 여러가지 docstring의 규칙에 대해 pep257에 기술되어 있으니 확인해보는 편이 좋을 것 같다.
+
+```python
+class DocstringExampleClass():
+    '''DocstringExampleClass
+    Docstring을 이해하고 활용하기 위해 생성한 클래스
+    해당 부분엔 클래스에 대한 설명을 기입한다.
+
+    '''
+
+    def docstrig_example_function():
+        '''Return 0 always
+        
+        docstring_example_function
+        Docstring을 이해하고 활용하기 위해 생성한 클래스 내부 함수
+        해당 부분엔 함수에 대한 설명을 기입한다.
+        print a fixed massage then
+        
+        '''
+        print('docstring_example_function')
+        return 0
+
+def main():
+    print('클래스 생성')
+    dExmp = DocstringExampleClass()
+    print('클래스 Docstring 확인')
+    print(dExmp.__doc__)
+    print()
+    print('함수 Docstring 확인')
+    print(dExmp.docstrig_example_function.__doc__)
+
+if __name__ == '__main__':
+    main()
+```
 
 # 마무리
 *Docstring*을 만드는 것은 같이 일하는 사람들의 이해를 도울 뿐 아니라 내가 사용하고 관리하기 더욱 편리해진다.

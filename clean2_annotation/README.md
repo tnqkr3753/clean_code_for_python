@@ -1,5 +1,6 @@
  > This document is for clean code in Python
- >  > referenced in https://doorbw.tistory.com/231
+ >  > referenced in https://doorbw.tistory.com/232  
+ >  > referenced in https://www.python.org/dev/peps/pep-3107/
 
  # *Annotation*
  
@@ -50,6 +51,9 @@ print(AnnotationClass.__annotations__)
 {'x': <class 'str'>, 'y': <class 'int'>, 'z': <class 'dict'>}
 ```
 함수와 마찬가지로 class의 내부 변수가 어떤 타입을 가져야 하는 지 보다 쉽게 알 수 있다.
+
+추가적으로 PEP3107에서 Function Annotations에 대한 규칙이 기술되어 있어 해당 문서를 확인하면 많은 도움이 될 것이다.
+> https://www.python.org/dev/peps/pep-3107/
 
 # *Anootation* 주의할 점
 Python은 Annotation에 대한 강제성이 전혀 없다.
